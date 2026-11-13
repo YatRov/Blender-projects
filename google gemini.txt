@@ -1,0 +1,58 @@
+Patrząc na załączony zrzut ekranu z Blendera (`Robot_tes.blend`), znajdujesz się w kluczowym momencie modelowania — Twoja siatka ma już nałożony modyfikator *Subdivision Surface*, co widać w panelu po prawej stronie.
+
+Oto jak wykonać krok po kroku **punkt 3 (Kształt „twarzy” / wizjera)** oraz **punkt 4 (Fioletowy pierścień)**, biorąc pod uwagę to, co już masz na ekranie:
+
+---
+
+### Krok 3. Kształt „twarzy” / wizjera
+
+Ponieważ masz włączony *Subdivision Surface*, najlepiej pracować na bazowej siatce (możesz włączyć ikonę kwadratu *Cage* w modyfikatorze, aby widzieć modyfikowaną siatkę bezpośrednio na obłe).
+
+1. **Przejdź do Edit Mode:** Zaznacz swoją siatkę głowy i naciśnij **Tab**.
+2. **Dodaj pętle krawędzi (Loop Cuts):**
+* Naciśnij **Ctrl + R**, najedź kursorem na przednią część głowy, aby pojawiła się żółta linia podziału, i zatwierdź lewym przyciskiem myszy.
+* Użyj kółka myszy, aby zwiększyć liczbę pętli (np. na 2 lub 3), a następnie kliknij ponownie, aby zatwierdzić ich pozycję. Przyda Ci się też przynajmniej jedna pionowa pętlia na środku (jeśli jej nie masz).
+
+
+3. **Uformuj spłaszczenie:**
+* Przełącz się na tryb zaznaczania wierzchołków (**1** na klawiaturze numerycznej lub górnym pasku).
+* Zaznacz wierzchołki w centralnej części przodu głowy (tam, gdzie ma być płaszczyzna wizjera).
+* Włącz *Proportional Editing* (naciśnij klawisz **O**, upewnij się, że włącznik na górze jest aktywny) lub po prostu wyłącz je, jeśli wolisz działać precyzyjnie na mniejszej grupie punktów.
+* Naciśnij **G**, a następnie oś wzdłuż której chcesz wciągnąć siatkę (zazwyczaj **Y** dla wnęki w głąb głowy) i delikatnie pociągnij myszką do środka, aby utworzyć wgłębienie widoczne na referencji.
+
+
+4. **Korekta w Sculpt Mode (opcjonalnie):**
+* Jeśli chcesz, aby przejścia były bardziej organiczne, przejdź na chwilę do *Sculpt Mode* (z menu u góry), wybierz pędzel **Grab** ze **Strength** ustawionym nisko (np. `0.1`–`0.2`) i wygładź krawędzie wokół spłaszczenia.
+
+
+
+---
+
+### Krok 4. Fioletowy pierścień (Sposób A – najczystszy)
+
+Najlepszym sposobem na precyzyjny, cienki pierścień opasujący głowę jest użycie krzywej (Curve):
+
+1. Wróć do **Object Mode** (**Tab**).
+2. Dodaj krzywą okręgu: naciśnij **Shift + A** $\rightarrow$ **Curve** $\rightarrow$ **Circle**.
+3. Obróć i wyskaluj okrąg (**R**, a potem odpowiednia oś, oraz **S**), aby dopasować go kształtem i rozmiarem dokładnie do miejsca, w którym na głowie ma przebiegać fioletowy pasek.
+4. Przejdź do zakładki **Object Data Properties** (ikona zielonej krzywej w panelu po prawej):
+* Rozwiń zakładkę **Shape** i ustaw **Resolution Preview** na `64` (dzięki temu okrąg będzie idealnie gładki).
+* Rozwiń zakładkę **Geometry** $\rightarrow$ **Bevel**:
+* W polu **Depth** wpisz małą wartość, np. `0.003` lub `0.005` (zależnie od skali Twojego modelu).
+* W polu **Resolution** wpisz `8` lub `12`, aby przekrój pierścienia był obły.
+
+
+
+
+5. **Konwersja na siatkę:**
+* Gdy pierścień leży idealnie w zaplanowanym miejscu, kliknij na niego prawym przyciskiem myszy w widoku 3D (lub w Outlinerze) i wybierz **Convert to** $\rightarrow$ **Mesh**.
+
+
+6. **Wtopienie w model:**
+* Przejdź do *Edit Mode* nowo powstałego pierścienia lub po prostu przesuń go lekko w głąb głowy (**G** + **Y**), aby delikatnie „wżynał się” w czarną powłokę hełmu, dając realistyczny efekt wnęki.
+
+
+
+---
+
+Czy chcesz przejść od razu do konfiguracji materiałów (punkt 5) dla czarnego, błyszczącego lakieru i świecącego fioletowego pierścienia?
